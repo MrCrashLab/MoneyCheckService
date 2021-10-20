@@ -1,13 +1,13 @@
-#Описание проекта
+# Описание проекта
 Создать сервис, который обращается к сервису курсов валют, и отображает gif:
 если курс по отношению к USD за сегодня стал выше вчерашнего, то отдаем рандомную отсюда https://giphy.com/search/rich
 если ниже - отсюда https://giphy.com/search/broke
 
-##Ссылки
+## Ссылки
 1. REST API курсов валют - https://docs.openexchangerates.org/
 2. REST API гифок - https://developers.giphy.com/docs/api#quick-start-guide
 
-##Must Have
+## Must Have
 1. Сервис на Spring Boot 2 + Java / Kotlin
 Запросы приходят на HTTP endpoint (должен быть написан в соответствии с rest conventions), 
 туда передается код валюты по отношению с которой сравнивается USD
@@ -16,7 +16,7 @@
 4. На сервис написаны тесты (для мока внешних сервисов можно использовать @mockbean или WireMock)
 5. Для сборки должен использоваться Gradle
 
-#Endpoint
+# Endpoint
 Для отображения гифки надо послать GET запрос по следующему endpoint'у.
 
 `GET /money-check-service/currency`
@@ -31,7 +31,7 @@
 
 `<img src="https://giphy.com/gifs/job-6AaB96ZVrUN0I"/>`
 
-#Запуск
+# Запуск
 
 Запускается проект как и обычное java приложение
 
