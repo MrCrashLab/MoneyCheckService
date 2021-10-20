@@ -13,7 +13,7 @@ import ru.MrCrashLab.MoneyCheck.Services.MoneyService;
  * Контроллер
  * */
 @RestController
-@RequestMapping()
+@RequestMapping("/money-check-service")
 public class MoneyCheckController {
     @Autowired
     GifService gifService;

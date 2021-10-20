@@ -21,21 +21,21 @@ class MoneyCheckControllerTest {
 	private MockMvc mockMvc;
 	@Test
 	void pageNotFounds() throws Exception {
-		this.mockMvc.perform(get("/"))
+		this.mockMvc.perform(get("/money-check-service"))
 				.andDo(print())
 				.andExpect(status().is4xxClientError());
 	}
 
 	@Test
 	void noParamsPassed() throws Exception{
-		this.mockMvc.perform(get("/currency"))
+		this.mockMvc.perform(get("/money-check-service/currency"))
 				.andDo(print())
 				.andExpect(status().is4xxClientError());
 	}
 
 	@Test
 	void contextLoads() throws Exception{
-		this.mockMvc.perform(get("/currency").param("desc", "RUB"))
+		this.mockMvc.perform(get("/money-check-service/currency").param("desc", "RUB"))
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(content().string(containsString("<img src=")));
@@ -43,7 +43,7 @@ class MoneyCheckControllerTest {
 
 	@Test
 	void wrongDesc() throws Exception{
-		this.mockMvc.perform(get("/currency").param("desc", "RUBdsdsdsd"))
+		this.mockMvc.perform(get("/money-check-service/currency").param("desc", "RUBdsdsdsd"))
 				.andDo(print())
 				.andExpect(status().is4xxClientError());
 	}
